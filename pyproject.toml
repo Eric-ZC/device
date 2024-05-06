@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "deviceaut"
+version = "0.1.0"
+description = ""
+authors = ["yus <blues.rem@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pytz = "^2023.3.post1"
+requests = "^2.31.0"
+rich = "^13.7.0"
+adbutils = "^2.2.1"
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+extend-ignore = ["F403", "F405", "E731", "N801"]
