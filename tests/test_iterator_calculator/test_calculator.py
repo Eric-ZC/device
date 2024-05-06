@@ -18,12 +18,7 @@ class TestCalculator:
         console.print("\n执行后置操作")
         driver.press_keycode(Keys.HOME)
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_base_operate(self, driver: Driver, calculator_page):
         """数字输入"""
         for i in range(9, 0, -1):
@@ -44,11 +39,6 @@ class TestCalculator:
         assert_that(item).is_equal_to("987,654,321")
         calculator_page.hold_press_sym_btn("清除")
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swan_1_pro
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
     def test_factory_mode(self,driver:Driver, calculator_page):
         """工厂模式编号"""
@@ -57,8 +47,8 @@ class TestCalculator:
         for _ in range(2):
             calculator_page.click_num_btn("3")
         calculator_page.click_sym_btn("加")
-        # ele = calculator_page.factory_mode()
-        # assert_that(ele).is_equal_to(True)
+        ele = calculator_page.factory_mode()
+        assert_that(ele).is_equal_to(True)
 
 
 

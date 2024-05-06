@@ -27,7 +27,7 @@ from adbutils import AdbClient
 # device = ("NMS212NG3349F0081","swift 2 pro")
 # device = ("ND4504CG2348C0006", "D4_504_Pro")
 # device = ("NMS115NG1406F0050", "swift1")
-device = ("NDS111XG2329C0005", "swift1")
+device = ("ND4504PH2341F0008", "D4_504_Pro")
 
 
 if __name__ == "__main__":
@@ -55,6 +55,6 @@ if __name__ == "__main__":
             "--loop=1",
             # "-x",
             "-m",
-            "android11"
+            "D4_504_Pro"
         ]
     )

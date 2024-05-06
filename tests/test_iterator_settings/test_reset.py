@@ -18,11 +18,6 @@ class TestRest:
         console.print("\n执行后置操作")
         driver.press_keycode(Keys.HOME)
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swan_1_pro
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
     def test_rest_internet(self,driver:Driver, reset_wlan_network_page):
         """重置网络"""
@@ -30,7 +25,7 @@ class TestRest:
         reset_wlan_network_page.reset_wlan_network_bluetooth()
         reset_wlan_network_page.click_reset_setting()
         reset_wlan_network_page.click_exec_reset()
-        # status = reset_wlan_network_page.toast_display()
-        # console.print(status)
-        # assert_that(status).is_equal_to("网络设置已重置")
+        status = reset_wlan_network_page.toast_display()
+        console.print(status)
+        assert_that(status).is_equal_to("网络设置已重置")
         # 重置 断言

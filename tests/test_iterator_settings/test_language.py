@@ -22,9 +22,6 @@ class TestLanguage:
         yield
         console.print("\n执行后置操作")
 
-    @pytest.mark.swan_1_pro
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
     def test_switch_language_oir(self, driver: Driver, settings_page, language_page):
         """横屏切换语言"""
@@ -36,11 +33,3 @@ class TestLanguage:
         console.print(language_page.get_toolbar_content())
         language_page.switch_language()
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    def test_switch_language(self, driver: Driver, settings_page, language_page):
-        """横屏切换语言"""
-        language_page.click_add_language()
-        language_page.click_search_content()
-        language_page.switch_language_android_11()
-        language_page.switch_language_android_11()

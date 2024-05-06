@@ -20,11 +20,6 @@ class TestSettings:
         console.print("\n执行后置操作")
         driver.press_keycode(Keys.HOME)
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swan_1_pro
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
     def test_no_screen_lock(self,driver: Driver,security_page):
         """无锁屏解锁"""
@@ -36,15 +31,9 @@ class TestSettings:
         console.print(status)
         # assert_that(status).is_equal_to("无")
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swan_1_pro
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
     def test_slide_screen_lock(self,driver: Driver,security_page):
         """滑动解锁"""
-
         security_page.click_screen_lock()
         security_page.select_slide_lock()
         security_page.lock_screen()

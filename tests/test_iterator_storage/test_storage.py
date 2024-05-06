@@ -31,11 +31,6 @@ class TestStorage:
         console.print(setting_memory)
         assert_that(str(diag_memory)).is_equal_to(str(setting_memory))
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swan_1_pro
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
     def test_factory_reset(self, driver:Driver, settings_page, reset_option_page):
         """回复出厂值"""
@@ -47,27 +42,12 @@ class TestStorage:
         # reset_option_page.erase_all_data()
         # 恢复出厂值的验证
 
-    @pytest.mark.swan_1_pro
     @pytest.mark.D4_504_Pro
     def test_developer_options_oir_oir(self, driver:Driver, settings_page, gestures_page,about_device_page):
         """开发者模式"""
         driver.launch_app(*settings.packages.settings)
         settings_page.click_about_device()
         about_device_page.enter_developer()
-        settings_page.click_system()
-        state = settings_page.developer_options()
-        assert_that(state).is_not_none()
-
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
-    def test_developer_options(self, driver: Driver, settings_page, gestures_page, about_device_page):
-        """开发者模式"""
-        driver.launch_app(*settings.packages.settings)
-        settings_page.click_about_device()
-        about_device_page.enter_developer()
-        gestures_page.click_back_btn()
         settings_page.click_system()
         state = settings_page.developer_options()
         assert_that(state).is_not_none()

@@ -13,34 +13,21 @@ from src.conf import settings
 
 class TestLaucher:
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_launch_gallery(self, driver:Driver, launcher_page):
         """创建桌面"""
         time.sleep(5)
         driver.press_keycode(Keys.HOME)
         launcher_page.move_last_app()
 
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_widgets(self, driver:Driver, launcher_page):
         """微件"""
         launcher_page.hold_wigdet()
         time.sleep(2)
         driver.back()
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_delete_desktop(self, driver:Driver , launcher_page):
         """删除桌面"""
         driver.back()

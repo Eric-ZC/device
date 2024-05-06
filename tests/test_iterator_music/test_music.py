@@ -29,12 +29,7 @@ class TestMusic:
         console.print("启动文件")
         # yield
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_play_music(self,driver: Driver, music_page):
         """播放音乐"""
         music_page.click_songs()
@@ -43,12 +38,7 @@ class TestMusic:
         music_page.click_prev()
         music_page.click_pause()
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_resting_screen(self,driver: Driver, music_page):
         """熄屏播放"""
         driver.launch_app(*settings.packages.music)

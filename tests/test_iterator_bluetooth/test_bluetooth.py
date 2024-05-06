@@ -22,38 +22,7 @@ class TestBluetooth:
         console.print("\n执行后置操作")
         driver.press_keycode(Keys.HOME)
 
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
-    def test_pull_down_menu(self, driver: Driver, notification_panel):
-        """下拉框"""
-        notification_panel.expand(count=2)
-        console.print("下拉快捷菜单")
-        bluetooth_status = driver.bluetooth_on
-        notification_panel.click_bluetooth()
-        assert_that(driver.bluetooth_on).is_type_of(bool).is_not_equal_to(bluetooth_status)
-        notification_panel.hold_press_bluetooth()
-
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
-    def test_bluetooth_receive_file(self, driver: Driver, connection_preferences_page, bluetooth_received_page, settings_page):
-        """蓝牙接收文件"""
-        connection_preferences_page.click_file_received_via_bluetooth()
-
-
-    @pytest.mark.swift_2_pro
-    @pytest.mark.swift_1_pro
-    def test_virtual_bluetooth(self, driver: Driver, settings_page, connection_preferences_page):
-        """虚拟蓝牙"""
-        connection_preferences_page.click_view_all()
-        connection_preferences_page.click_set_btn()
-        connection_preferences_page.click_rename()
-        connection_preferences_page.input_rename("111")
-        connection_preferences_page.click_confirm_rename()
-
-    @pytest.mark.android11
-    @pytest.mark.D4_504
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_pull_down_menu_oir(self, driver: Driver, notification_panel):
         """下拉框"""
         notification_panel.expand(count=1)
@@ -64,7 +33,6 @@ class TestBluetooth:
         notification_panel.hold_press_bluetooth()
 
     @pytest.mark.D4_504_Pro
-    @pytest.mark.swan_1_pro
     def test_bluetooth_receive_file_oir(self, driver: Driver, connection_preferences_page, bluetooth_received_page, settings_page):
         """蓝牙接收文件"""
         connection_preferences_page.click_file_received_via_bluetooth()
@@ -74,17 +42,6 @@ class TestBluetooth:
         """虚拟蓝牙"""
         connection_preferences_page.click_view_all()
         connection_preferences_page.click_set_btn()
-        connection_preferences_page.click_rename()
-        connection_preferences_page.input_rename("111")
-        connection_preferences_page.click_confirm_rename()
-
-    @pytest.mark.skip()
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    def test_virtual_bluetooth_oir(self, driver: Driver, settings_page, connection_preferences_page):
-        """虚拟蓝牙"""
-        connection_preferences_page.click_view_all()
-        connection_preferences_page.device_detail()
         connection_preferences_page.click_rename()
         connection_preferences_page.input_rename("111")
         connection_preferences_page.click_confirm_rename()
