@@ -66,7 +66,6 @@ class TestWiFi:
         network_page.click_wifi()
         wifi_page.get_wifi(*wifi_list)
 
-
     @pytest.mark.D4_504_Pro
     def test_wifi_without_(self,driver: Driver,wifi_page, settings_page, network_page,reset_wlan_network_page):
         """添加无密码wifi"""

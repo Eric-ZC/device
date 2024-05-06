@@ -204,15 +204,10 @@ class Launcher(BasePage):
 
     def move_folders_app_oir(self):
         console.print("移动文件夹的应用")
-        size = self.driver.find(self.loc.oir_folder_content).size
-        x = int(size['width'])/2
-        console.print(x)
-        y = int(size['height'])*0.25
-        console.print(y)
-        ele = self.driver.find(self.loc.folder.apps)
+        ele = self.driver.find(self.loc.folder.apps,timeout=5)
         with self.driver.actions_manager() as actions:
             actions.click_and_hold(ele, duration=5)
-            actions.move_to_location(x, y, duration=5)
+            actions.move_to_location(355, 365, duration=5)
             actions.release()
 
     def move_folders_app_swan(self):
@@ -229,15 +224,12 @@ class Launcher(BasePage):
             # if self.driver.find(self.loc.folder_title) is None:
             #     break
 
-
     def move_app_in_folders(self):
         ele = self.driver.find(self.loc.folder.apps, exist_ok=True)
         console.print(ele.get_text())
         if ele:
             return False
         return True
-
-
 
     def move_folders_app(self):
         time.sleep(5)
@@ -288,7 +280,7 @@ class Launcher(BasePage):
         with self.driver.actions_manager() as actions:
             actions.click_and_hold(origin_el, duration=10)
             time.sleep(2)
-            actions.move_to_location(x, y, duration=5)
+            actions.move_to_location(1050, 636, duration=5)
             actions.release()
 
     def merge_app_swan(self):

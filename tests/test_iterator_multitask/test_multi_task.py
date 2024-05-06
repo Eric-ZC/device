@@ -30,7 +30,6 @@ class TestMultiTask:
         gestures_page.click_recent_apps_btn()
         gestures_page.screen_shot()
         gestures_page.screen_shot_share()
-        assert_that().contains_value()
 
     @pytest.mark.D4_504_Pro
     def test_clearn_app_up(self,driver: Driver, gestures_page):

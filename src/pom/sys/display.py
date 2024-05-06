@@ -49,7 +49,7 @@ class Display(BasePage):
             description="第3张壁纸，共16张"
         )
         wallpaper_options_d5 = Selector(
-            XPath("//android.widget.FrameLayout[@content-desc=\"第1张壁纸，共1张\"]"),
+            XPath("//android.widget.FrameLayout[@content-desc=\"第3张壁纸，共16张\"]"),
             description="第1张壁纸，共1张"
         )
 
@@ -59,7 +59,7 @@ class Display(BasePage):
         )
 
         setting_wallpaper_d5 = Selector(
-            XPath(id="com.android.wallpaperpicker:id/set_wallpaper_button",has_text="设置壁纸"),
+            XPath(id="com.android.wallpaperpicker:id/wallpaper_set",has_text="设置壁纸"),
             description="设置壁纸"
         )
 
@@ -176,7 +176,7 @@ class Display(BasePage):
         console.print("设置壁纸")
 
     def setting_main_wallpaper(self):
-        self.driver.find(self.loc.setting_main_wallpaper).click()
+        self.driver.find(self.loc.setting_main_wallpaper,timeout=5).click()
         console.print("设置主屏幕壁纸")
 
     def drag_main_brightness_bar(self, percentage: float):

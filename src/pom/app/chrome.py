@@ -309,25 +309,16 @@ class Chrome(BasePage):
         ele = self.driver.find(self.loc.signin_fre,timeout=5,exist_ok=True)
         if ele is not None:
             ele.click()
-        self.driver.press_keycode(Keys.POWER)
-        time.sleep(3)
-        self.driver.press_keycode(Keys.POWER)
-        ele = self.driver.find(self.loc.ack_know, exist_ok=True)
+        ele = self.driver.find(self.loc.ack_know,timeout=5, exist_ok=True)
         if ele is not None:
             ele.click()
-        ele = self.driver.find(self.loc.select_search, exist_ok=True)
-        if ele is not None:
-            ele.click()
-        ele1 = self.driver.find(self.loc.no_thanks_btn,timeout=5,exist_ok=True)
+        ele1 = self.driver.find(self.loc.no_thanks_btn,timeout=10,exist_ok=True)
         if ele1 is not None:
             ele1.click()
+        ele = self.driver.find(self.loc.select_search, timeout=5, exist_ok=True)
+        if ele is not None:
+            ele.click()
         console.print("谷歌启动初始化")
-
-    # def select_search(self):
-    #     ele = self.driver.find(self.loc.select_search,exist_ok=True)
-    #     if ele is not None:
-    #         ele.click()
-    #     console.print("选择查询方式")
 
     def click_tab_switch(self):
         self.driver.find(self.loc.tab_switch).click()
