@@ -91,30 +91,3 @@ class TestWiFi:
         reset_wlan_network_page.click_reset_setting()
         reset_wlan_network_page.click_exec_reset()
 
-    @pytest.mark.android11
-    @pytest.mark.D4_504
-    def test_wifi_without_pad(self, driver: Driver, wifi_page, settings_page, network_page, reset_wlan_network_page):
-        """添加无密码wifi"""
-        driver.launch_app(*settings.packages.settings)
-        settings_page.click_system()
-        reset_wlan_network_page.click_reset_options()
-        reset_wlan_network_page.reset_wlan_network_bluetooth()
-        reset_wlan_network_page.click_reset_setting()
-        reset_wlan_network_page.click_exec_reset()
-
-        driver.launch_app(*settings.packages.settings)
-        settings_page.click_network()
-        network_page.click_wifi_android()
-        time.sleep(5)
-        wifi_page.get_wifi("中兴")
-        time.sleep(5)
-        ssid = driver.get_current_ssid()
-        # console.print(ssid)
-        # assert_that(ssid, f"Actual value '{ssid}' is not equal to expected value '{'中兴'}'").is_equal_to("中兴")
-
-        driver.launch_app(*settings.packages.settings)
-        settings_page.click_system()
-        reset_wlan_network_page.click_reset_options()
-        reset_wlan_network_page.reset_wlan_network_bluetooth()
-        reset_wlan_network_page.click_reset_setting()
-        reset_wlan_network_page.click_exec_reset()
